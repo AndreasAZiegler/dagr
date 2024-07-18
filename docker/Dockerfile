@@ -1,5 +1,5 @@
 # FROM ubuntu:22.04
-FROM nvidia/cuda:12.5.1-base-ubuntu22.04
+FROM nvidia/cuda:11.3.1-devel-ubuntu20.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -39,3 +39,9 @@ RUN conda init bash && \
     cd /dagr && \
     bash download_and_install_dependencies.sh && \
     conda install -y h5py conda-forge::blosc-hdf5-plugin
+
+RUN conda init bash && \
+    . ~/.bashrc && \
+    conda activate dagr && \
+    cd /dagr && \
+    pip install -e .
