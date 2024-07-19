@@ -25,17 +25,17 @@ RUN conda init bash && \
     conda create -y -n dagr python=3.8 && \
     conda activate dagr && \
     #conda install -y setuptools==69.5.1 anaconda::mkl pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3 -c pytorch
-    conda install -y setuptools==69.5.1 anaconda::mkl pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia && \
+    conda install -y setuptools==69.5.1 anaconda::mkl pytorch torchvision torchaudio pytorch-cuda=12.1 pytorch-sparse pytorch-scatter pytorch-cluster pytorch-spline-conv -c pytorch -c nvidia -c pyg  && \
     conda install -y h5py conda-forge::blosc-hdf5-plugin
 
 RUN apt-get update && \
     apt-get install -y g++
 
-#RUN conda init bash && \
-#    . ~/.bashrc && \
-#    conda activate dagr && \
-#    cd /dagr && \
-#    bash install_env.sh
+RUN conda init bash && \
+    . ~/.bashrc && \
+    conda activate dagr && \
+    cd /dagr && \
+    bash install_env.sh
 
 #RUN conda init bash && \
 #    . ~/.bashrc && \

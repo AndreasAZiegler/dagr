@@ -10,7 +10,6 @@
 5c. `source ~/.bashrc`
 5d. `conda activate dagr`
 5e. `cd /dagr`
-5f. `bash install_env.sh`
 5f. `bash download_and_install_dependencies.sh`
 5g. `pip install -e .`
 6. In a different terminal run `docker ps`
@@ -21,3 +20,4 @@
 
 For lookup, not for usage:
 (5a. `rocker --user --nvidia --volume /path/to/dagr/:/dagr -- dagr`)
+(5f. `bash install_env.sh`)
