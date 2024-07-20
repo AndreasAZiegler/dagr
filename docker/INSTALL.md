@@ -12,6 +12,7 @@
     5. `cd /dagr`
     6. `bash download_and_install_dependencies.sh`
     7. `pip install -e .`
+    8. `chmod -R 755 /miniconda3`
 6. In a different terminal run `docker ps`
 7. In the same new terminal run `docker commit <CONTAINER ID> dagr`
 8. Download data fragment, and checkpoint with `bash download_example_data.sh`
